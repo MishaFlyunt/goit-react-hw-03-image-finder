@@ -4,7 +4,7 @@ import Notiflix from 'notiflix';
 
 import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
-import { fetchImages } from './Api';
+import { fetchImages, perPage } from './Api';
 import { Button } from './Button/Button';
 import { Loader } from './Loader/Loader';
 
@@ -97,7 +97,9 @@ export class App extends Component {
           // closeModal={this.closeModal}
         />
         {loading && <Loader />}
-        {(images.length / 12) >= page  && <Button loadMore={this.handleLoadMore} />}
+        {images.length / perPage >= page && (
+          <Button loadMore={this.handleLoadMore} />
+        )}
 
         <GlobalStyle />
       </Container>
