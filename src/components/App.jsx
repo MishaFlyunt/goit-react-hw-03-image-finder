@@ -84,7 +84,7 @@ export class App extends Component {
   // closeModal = () => this.setState({ isModalOpen: false });
 
   render() {
-    const { query, images, loading } = this.state;
+    const { query, images, loading, page } = this.state;
     console.log(query);
     console.log(images);
     return (
@@ -97,7 +97,7 @@ export class App extends Component {
           // closeModal={this.closeModal}
         />
         {loading && <Loader />}
-        {images.length > 11 && <Button loadMore={this.handleLoadMore} />}
+        {(images.length / 12) >= page  && <Button loadMore={this.handleLoadMore} />}
 
         <GlobalStyle />
       </Container>
