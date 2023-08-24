@@ -97,7 +97,7 @@ export class App extends Component {
           // closeModal={this.closeModal}
         />
         {loading && <Loader />}
-        {images.length > 0 && <Button loadMore={this.handleLoadMore} />}
+        {images.length > 11 && <Button loadMore={this.handleLoadMore} />}
 
         <GlobalStyle />
       </Container>
