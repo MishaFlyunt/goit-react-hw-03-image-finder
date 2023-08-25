@@ -98,11 +98,10 @@ export class App extends Component {
             // closeModal={this.closeModal}
           />
         )}
-        {loading && <Loader />}
         {images.length / perPage >= page && !loading && (
           <Button loadMore={this.handleLoadMore} />
         )}
-
+        {loading && <Loader />}
         <GlobalStyle />
       </Container>
     );
