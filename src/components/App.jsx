@@ -1,6 +1,6 @@
 import { GlobalStyle, Container } from './GlobalStyle';
 import React, { Component } from 'react';
-import Notiflix from 'notiflix';
+import toast, { Toaster } from 'react-hot-toast';
 
 import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
@@ -30,7 +30,7 @@ export class App extends Component {
   handleSubmit = evt => {
     evt.preventDefault();
     if (evt.target.elements.query.value.trim() === '') {
-      Notiflix.Notify.failure('The search criteria are unknown');
+      toast.error('Sorry, The search criteria are unknown');
       return;
     }
     this.changeQuery(evt.target.elements.query.value);
@@ -66,7 +66,7 @@ export class App extends Component {
         }));
         this.setState({ loading: false });
       } else {
-        Notiflix.Notify.warning('Nothing was found for these criteria');
+        toast.error('Sorry, Nothing was found for these criteria');
         this.setState({ loading: false });
       }
     } catch (error) {
@@ -102,6 +102,7 @@ export class App extends Component {
           <Button loadMore={this.handleLoadMore} />
         )}
         {loading && <Loader />}
+        <Toaster position="top-right" reverseOrder={false} />
         <GlobalStyle />
       </Container>
     );
