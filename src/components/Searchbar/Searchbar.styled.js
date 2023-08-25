@@ -36,7 +36,7 @@ export const SearchFormInput = styled.input`
   font-size: 20px;
   border: none;
   outline: none;
-  padding-left: 4px;
+  padding-left: 14px;
   padding-right: 4px;
 
   & ::placeholder {
@@ -47,4 +47,5 @@ export const SearchFormInput = styled.input`
 
 export const ButtonStyled = styled.button`
   border: none;
+  cursor: pointer;
 `;
