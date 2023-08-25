@@ -5,8 +5,8 @@ export const Loader = () => {
   return (
     <LoaderStyled>
       <Circles
-        height="80"
-        width="80"
+        height="100"
+        width="100"
         color="#a94d4d"
         ariaLabel="circles-loading"
         wrapperStyle={{}}
