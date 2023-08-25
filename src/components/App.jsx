@@ -90,14 +90,16 @@ export class App extends Component {
     return (
       <Container>
         <Searchbar submit={this.handleSubmit} />
-        <ImageGallery
-          searchImage={images}
-          // modal={isModalOpen}
-          // openModal={this.openModal}
-          // closeModal={this.closeModal}
-        />
+        {images.length > 0 && (
+          <ImageGallery
+            searchImage={images}
+            // modal={isModalOpen}
+            // openModal={this.openModal}
+            // closeModal={this.closeModal}
+          />
+        )}
         {loading && <Loader />}
-        {images.length / perPage >= page && (
+        {images.length / perPage >= page && !loading && (
           <Button loadMore={this.handleLoadMore} />
         )}
 
