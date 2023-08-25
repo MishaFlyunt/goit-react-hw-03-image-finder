@@ -1,15 +1,16 @@
-import { ThreeDots } from 'react-loader-spinner';
+import { Circles } from 'react-loader-spinner';
 import { LoaderStyled } from './Loader.styled';
 
 export const Loader = () => {
   return (
     <LoaderStyled>
-      <ThreeDots
-        height="140"
-        width="140"
-        radius="9"
-        color="#4fa94d"
-        ariaLabel="three-dots-loading"
+      <Circles
+        height="80"
+        width="80"
+        color="#a94d4d"
+        ariaLabel="circles-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
         visible={true}
       />
     </LoaderStyled>
